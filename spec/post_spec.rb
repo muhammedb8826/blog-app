@@ -29,7 +29,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  context "update_post_counter" do
+  context 'update_post_counter' do
     let!(:author) { User.create name: 'Dr.Zakir', posts_counter: 0 }
     let!(:post) { Post.create author_id: author.id, title: 'Hajj', comments_counter: 0, likes_counter: 0 }
 
@@ -38,7 +38,7 @@ RSpec.describe Post, type: :model do
     end
   end
 
-  context "recent_comments" do
+  context 'recent_comments' do
     let!(:author) { User.create name: 'Dr.Zakir', posts_counter: 0 }
     let!(:post) { Post.create author_id: author.id, title: 'Hajj', comments_counter: 0, likes_counter: 0 }
     let!(:comment) do
