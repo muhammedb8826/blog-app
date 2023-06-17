@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
-# Ruby-capstone-project - Catalog of my things
+# Rails Blog App
 
-In this project, I'm building a blog app with rails that will help users to post a blog, give a comment and likes on the posted blog. the database I'm using in this project is postgresql to persist datas. 
+In this project, I'm building a blog app with rails that will help users to post a blog, give a comment and likes on the posted blog. the database I'm using in this project is postgresql to persist data. 
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
