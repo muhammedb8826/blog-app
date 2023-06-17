@@ -1,40 +1,40 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    subject { User.new(name: 'Mufti Menk', photo: 'https://mufti-menk.jpg', bio: 'Muslim scholar', posts_counter: 0) }
+  subject { User.new(name: 'Mufti Menk', photo: 'https://mufti-menk.jpg', bio: 'Muslim scholar', posts_counter: 0) }
 
-  before {subject.save}
+  before { subject.save }
 
   context 'when name is not present' do
-    before {subject.name = nil}
-
-    it 'is not valid' do
-      expect(subject).not_to be_valid
-    end
-  end
-    
-    context 'when name is present' do
-    it 'is valid' do
-      expect(subject).to be_valid
-    end
-  end
-
-    context 'when posts_counter is not a number' do
-    before {subject.posts_counter = 'one'}
+    before { subject.name = nil }
 
     it 'is not valid' do
       expect(subject).not_to be_valid
     end
   end
 
-    context 'when posts_counter is a number' do
+  context 'when name is present' do
     it 'is valid' do
       expect(subject).to be_valid
     end
   end
 
-    context 'when posts_counter is less than 0' do
-    before {subject.posts_counter = -1}
+  context 'when posts_counter is not a number' do
+    before { subject.posts_counter = 'one' }
+
+    it 'is not valid' do
+      expect(subject).not_to be_valid
+    end
+  end
+
+  context 'when posts_counter is a number' do
+    it 'is valid' do
+      expect(subject).to be_valid
+    end
+  end
+
+  context 'when posts_counter is less than 0' do
+    before { subject.posts_counter = -1 }
 
     it 'is not valid' do
       expect(subject).not_to be_valid
