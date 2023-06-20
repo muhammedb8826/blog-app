@@ -93,11 +93,19 @@ Clone the repo into your local machine:
 ```bash
 git clone https://github.com/muhammedb8826/blog-app.git
 ```
+Create the database by using a command
+
+```bash
+rails db:create
+```
 
 ### Usage
 
 To run the program use command, rails server
 
+```bash
+rails server
+```
 <p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- AUTHORS -->
