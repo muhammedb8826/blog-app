@@ -17,10 +17,17 @@
     </div>  
     <div class="col col-12 border border-3 border-black">
         <span>Comments</span>
-        <% post.comments.each do |comment| %>
-        <p><%= comment.text %></p>
+        <ul>
+        <% if post.comments.length > 0 %>
+          <% post.recent_comments.each do |comment| %>
+            <li><% comment.author.name %>: <%= comment.text %></li>
+          <% end %>
+        <% else %>
+            <li>No comments yet</li>
         <% end %>
+        </ul>
     </div>
     <% end %>
   </div>
+    <button>See all comments</button>
 </div>
