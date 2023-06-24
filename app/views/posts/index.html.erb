@@ -1,1 +1,33 @@
-<h1>This is from post page</h1>
+<div class="container">
+  <div class="row grid gap-3">
+    <div class="col-6 col-md-4 border border-3 border-black">
+      <img src="<%= @user.photo %>" />
+    </div>
+    <div class="col-6 col-md-8 border border-3 border-black">
+      <h2> <%= @user.name %></h2>
+      <sub>Number of posts <%= @user.posts.size %></sub>    
+    </div>
+  </div>
+  <div class="row">
+    <% @posts.each_with_index do |post, index| %>
+    <div class="col col-12 border border-3 border-black">
+      <span>Post # <%= index+1 %></span>
+        <p><%= post.text %></p>
+        <sub>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </sub>
+    </div>  
+    <div class="col col-12 border border-3 border-black">
+        <span>Comments</span>
+        <ul>
+        <% if post.comments.length > 0 %>
+          <% post.recent_comments.each do |comment| %>
+            <li><% comment.author.name %>: <%= comment.text %></li>
+          <% end %>
+        <% else %>
+            <li>No comments yet</li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+  </div>
+    <button>See all comments</button>
+</div>

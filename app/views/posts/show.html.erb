@@ -1,1 +1,21 @@
-<h1>Post 1</h1>
+<div class="container">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  <div class="row">
+    <div class="col col-12 border border-3 border-black">
+      <div class="d-flex">
+        <p><%= "Post #{@post.id} by #{@post.author.name}"%></p><sub>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </sub>
+      </div>
+        <div class="d-flex">
+            <p><%= @post.text %></p>
+        </div>
+        <ul>
+            <% @post.comments.each do |comment| %>
+            <li><%= @post.author.name %>: <%= comment.text %></li>
+            <% end %>
+        </ul>
+
+      </div>
+    </div>
+   
+  </div>
+</div>

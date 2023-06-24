@@ -1,1 +1,25 @@
-<h1>User 1</h1>
+<div class="container">
+  <div class="row grid gap-3">
+    <div class="col-6 col-md-4 border border-3 border-black">
+      <img src="<%= @user.photo %>" />
+    </div>
+    <div class="col-6 col-md-8 border border-3 border-black">
+      <h2> <%= @user.name %></h2>
+      <sub>Number of posts <%= @user.posts.size %></sub>    
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12 border border-3 border-black">
+      <span>Bio</span>
+        <p><%= @user.bio %></p>
+    </div> 
+    <% @user.recent_posts.each_with_index do |post, index| %>
+    <div class="col col-12 border border-3 border-black">
+      <span>Post # <%= index+1 %></span>
+        <p><%= post.text %></p>
+        <sub>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </sub>
+    </div>  
+    <% end %>
+  </div>
+  <button>See all posts</button>
+</div>
