@@ -11,6 +11,7 @@
   <div class="row">
     <% @posts.each_with_index do |post, index| %>
     <div class="col col-12 border border-3 border-black">
+        <%= link_to 'Create a new post', new_user_post_path %>
       <span>Post # <%= index+1 %></span>
         <p><%= post.text %></p>
         <sub>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </sub>

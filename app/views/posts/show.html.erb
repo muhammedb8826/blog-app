@@ -8,11 +8,17 @@
         <div class="d-flex">
             <p><%= @post.text %></p>
         </div>
-        <ul>
-            <% @post.comments.each do |comment| %>
-            <li><%= @post.author.name %>: <%= comment.text %></li>
-            <% end %>
-        </ul>
+        <div class="form">
+         <%= link_to new_user_post_comment_path(@post.author_id, @post.id) do %>
+          <p><%= "Comments: #{@post.comments_counter}" %></p>
+        <% end %>
+        <%= link_to user_post_likes_path(@post.author_id, @post.id) do %>
+          <p><%= "Likes: #{@post.likes_counter}" %></p>
+        <% end %>
+      <%= form_with url: user_post_likes_path(@post.author_id, @post.id) do |form| %>
+         <%= form.submit 'Like' %>
+      <% end %>
+        </div>
 
       </div>
     </div>
