@@ -10,13 +10,14 @@
   </div>
   <div class="row">
     <% @posts.includes(:author).each_with_index do |post, index| %>
-    <div class="col col-12 border border-3 border-black">
+    <div class="col col-12 border border-3 border-black" id="likes_post_<%= post.id %>">
       <%= link_to 'Create a new post', new_user_post_path %>
       <span>Post # <%= index+1 %></span>
+      <h2><%= link_to post.title, user_post_path(post.author, post) %></h2>
       <p><%= post.text %></p>
       <sub>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </sub>
     </div>  
-    <div class="col col-12 border border-3 border-black">
+    <div class="col col-12 border border-3 border-black" id="comments_post_<%= post.id %>">
         <span>Comments</span>
         <ul>
         <% if post.comments.length > 0 %>
@@ -25,6 +26,7 @@
           <% end %>
         <% else %>
             <li>No comments yet</li>
+            <li>Number of comments <%= post.comments_counter %></li>
         <% end %>
         </ul>
     </div>
