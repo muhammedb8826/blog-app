@@ -9,9 +9,4 @@ class User < ApplicationRecord
   def recent_posts
     posts.order(created_at: :desc).limit(3).to_a
   end
-  
-  def update_post_counter
-    author.increment!(:posts_counter)
-  end
-
 end
