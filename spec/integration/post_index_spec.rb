@@ -68,6 +68,7 @@ RSpec.describe 'post#index', type: :system do
     expect(page).to have_content('See all comments')
   end
 
+  # The link redirect to the diesred location
   context 'post detail link' do
     it 'post detail link should redirect to that post detail' do
       visit "users/#{user_two.id}/posts"
