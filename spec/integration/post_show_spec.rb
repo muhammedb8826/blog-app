@@ -49,7 +49,7 @@ RSpec.describe 'Posts Show', type: :system do
           visit "users/#{user_two.id}/posts/#{post_one.id}"
           expect(page).to have_content(comment.author.name)
         end
-      #I can see the comment each commentor left.
+        # I can see the comment each commentor left.
         it 'should render the comment body' do
           visit "users/#{user_two.id}/posts/#{post_one.id}"
           expect(page).to have_content(comment.text)

@@ -20,8 +20,8 @@ RSpec.describe 'User index integration spec', type: :system do
       expect(page).to have_content("Number of posts #{user_two.posts.size}")
     end
 
-    # When I click on a user, I am redirected to that user's show page. 
-    it 'should redirected to that users show page' do 
+    # When I click on a user, I am redirected to that user's show page.
+    it 'should redirected to that users show page' do
       visit users_path
       click_on user_two.name
       expect(page).to have_content(user_two.name)
