@@ -7,7 +7,7 @@ RSpec.describe 'Users', type: :request do
     it 'works! (now write some real specs)' do
       get '/users'
       expect(response).to have_http_status(200)
-      expect(response).to render_template(:index) 
+      expect(response).to render_template(:index)
     end
   end
   describe 'GET /users/:id' do

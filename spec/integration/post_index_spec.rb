@@ -4,7 +4,8 @@ RSpec.describe 'post#index', type: :system do
   let!(:user_two) { User.create name: 'Mufti menk', posts_counter: 0 }
   let!(:user_three) { User.create name: 'Dr Zakir', posts_counter: 0 }
   let!(:post) do
-    Post.create author_id: user_two.id, comments_counter: 0, likes_counter: 0, title: 'My awesome post', text: 'something'
+    Post.create author_id: user_two.id, comments_counter: 0, likes_counter: 0, title: 'My awesome post',
+                text: 'something'
   end
   let!(:post_two) do
     Post.create author_id: user_three.id, comments_counter: 0, likes_counter: 0, title: 'title', text: 'something'
@@ -46,7 +47,7 @@ RSpec.describe 'post#index', type: :system do
     comments = find_all('.comment')
     expect(comments.count).to be < 6
   end
-  
+
   # I can see how many comments a post has.
   it 'should render the number of comments' do
     visit "users/#{user_two.id}/posts"
@@ -61,8 +62,8 @@ RSpec.describe 'post#index', type: :system do
     element = find_by_id("likes_post_#{post.id}")
     expect(element).to have_content("Likes: #{post.likes_counter}")
   end
-  
-  # I can see a section for pagination if there are more posts than fit on the view.  
+
+  # I can see a section for pagination if there are more posts than fit on the view.
   it 'should render pagination if the post has more than 5 comments' do
     visit "users/#{user_three.id}/posts"
     expect(page).to have_content('See all comments')
