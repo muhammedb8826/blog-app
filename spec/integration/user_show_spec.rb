@@ -43,7 +43,6 @@ RSpec.describe 'Users show', type: :feature do
     expect(page).to have_button('See all posts')
   end
 
-
   describe 'Checking links' do
     it 'should render the users name as a link to their profile' do
       visit "users/#{user_two.id}"

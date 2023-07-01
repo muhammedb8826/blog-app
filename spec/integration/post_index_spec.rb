@@ -55,7 +55,6 @@ RSpec.describe 'post#index', type: :system do
     expect(element).to have_content("Number of comments #{post.comments_counter}")
   end
 
-
   # I can see how many likes a post has.
   it 'should render the number of likes' do
     visit "users/#{user_two.id}/posts"
