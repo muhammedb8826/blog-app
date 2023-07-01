@@ -8,6 +8,11 @@
     <%= f.text_field :name %>
   </div>
 
+   <div class="field">
+    <%= f.label :posts_counter %><br />
+    <%= f.number_field :posts_counter %>
+   </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
