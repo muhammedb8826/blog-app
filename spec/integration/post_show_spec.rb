@@ -42,10 +42,19 @@ RSpec.describe 'Posts Show', type: :system do
       expect(page).to have_content(post_one.text)
     end
 
-    # I can see the username of each commentor
-    it 'should render the comment author' do
-      visit "users/#{user_two.id}/posts/#{post_one.id}"
-      expect(page).to have_content(comment.author.name)
+    it 'should render the commentor name and body of the comment' do
+      # I can see the username of each commentor
+      post_two.comments.each do |comment|
+        it 'should render the comment author' do
+          visit "users/#{user_two.id}/posts/#{post_one.id}"
+          expect(page).to have_content(comment.author.name)
+        end
+      #I can see the comment each commentor left.
+        it 'should render the comment body' do
+          visit "users/#{user_two.id}/posts/#{post_one.id}"
+          expect(page).to have_content(comment.text)
+        end
+      end
     end
   end
 end

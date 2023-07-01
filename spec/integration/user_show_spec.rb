@@ -6,7 +6,8 @@ RSpec.describe 'Users show', type: :feature do
     Post.create author_id: user_two.id, comments_counter: 0, likes_counter: 0, title: 'My awesome post',
                 text: 'something'
   end
-
+  
+  # I can see the user's profile picture. 
   it 'should render the users profile picture ' do
     visit "users/#{user_two.id}"
     expect(page).to have_css("img[src*='http://myphoto']")
