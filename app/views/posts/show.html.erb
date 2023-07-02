@@ -6,6 +6,7 @@
         <p><%= "Post #{@post.id} by #{@post.author.name}"%></p><sub>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> </sub>
       </div>
         <div class="d-flex">
+            <h1><%= @post.title %></h1>
             <p><%= @post.text %></p>
         </div>
         <div class="form">

@@ -6,7 +6,7 @@
       <img src="<%= user.photo %>" />
     </div>
     <div class="col-6 col-md-8 border border-3 border-black">
-      <h2> <%= user.name %></h2>
+      <h2><%= link_to user.name, user_path(user) %></h2>
       <sub>Number of posts <%= user.posts.size %></sub>    
     </div>
     <% end %>

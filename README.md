@@ -7,20 +7,22 @@ In this project, I'm building a blog app with rails that will help users to post
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [Rails Blog App](#rails-blog-app)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 Blog app ](#-blog-app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Usage](#usage)
+  - [👥 Author ](#-author-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -118,6 +120,12 @@ rails server
 - GitHub: [@githubhandle](https://github.com/muhammedb8826)
 - Twitter: [@twitterhandle](https://twitter.com/muhammedb8826)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammedb8826/)
+
+👨‍💻 **Getayawkal Tamrat**
+
+- GitHub: [@getssh](https://github.com/getssh)
+- Twitter: [@GetayawkalT](https://twitter.com/GetayawkalT)
+- LinkedIn: [@getayawkal-tamrat](https://www.linkedin.com/in/getayawkal-tamrat/)
 
 <p align="right"><a href="#readme-top">👆</a></p>
 

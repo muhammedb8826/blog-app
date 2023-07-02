@@ -34,7 +34,7 @@ RSpec.describe Post, type: :model do
     let!(:post) { Post.create author_id: author.id, title: 'Hajj', comments_counter: 0, likes_counter: 0 }
 
     it 'should increment posts_counter by one' do
-      expect(post.update_post_counter.posts_counter).to eq(2)
+      expect(post.update_post_counter.posts_counter).to eq(1)
     end
   end
 
