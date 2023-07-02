@@ -76,3 +76,5 @@ end
 gem 'cancancan'
 gem 'devise', '~> 4.9'
 gem 'rswag'
+gem 'rack-cors'
+gem 'devise-jwt'
