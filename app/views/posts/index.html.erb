@@ -9,6 +9,7 @@
     </div>
   </div>
   <div class="row">
+    <%= link_to 'Create a new post', new_user_post_path %>
     <% @posts.includes(:author).each_with_index do |post, index| %>
     <div class="col col-12 border border-3 border-black" id="likes_post_<%= post.id %>">
       <%= link_to 'Create a new post', new_user_post_path %>
