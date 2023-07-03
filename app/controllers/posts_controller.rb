@@ -6,6 +6,19 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
+
+    respond_to do |format|
+      format.html do
+        @pagination = @posts.size > 2
+        return unless @pagination
+
+        @page = params[:page]&.to_i || 1
+        @total_pages = (@posts.size + 1) / 2
+        @posts = @posts.each_slice(2).to_a[@page - 1]
+      end
+
+      format.json { render json: @posts }
+    end
   end
 
   def destroy
