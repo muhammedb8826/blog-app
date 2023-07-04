@@ -26,7 +26,7 @@ In this project, I'm building a blog app with rails that will help users to post
 
 # 📖 Blog app <a name="about-project"></a>
 
-**Blog app** is an app that will help you to keep a post of user,comments and likes given by the user. 
+**Blog app** is an app that will help you to keep a post of users,comments, and likes given by the user. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
