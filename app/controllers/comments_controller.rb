@@ -1,4 +1,15 @@
 class CommentsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!, only: [:create]
+
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    respond_to do |format|
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @comment = Comment.new
   end
@@ -13,6 +24,14 @@ class CommentsController < ApplicationController
       flash[:alert] = 'Opps, something went wrong, try again!'
       render :new
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.post.comments_counter -= 1
+    @comment.post.save
+    @comment.destroy
+    redirect_to user_posts_path(@comment.user.id)
   end
 
   private

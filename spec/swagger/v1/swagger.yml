@@ -1,0 +1,44 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/users/{user_id}/posts":
+    get:
+      summary: Retrieves posts for a user
+      tags:
+      - Posts
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Posts retrived successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                  title:
+                    type: string
+                  text:
+                    type: string
+                required:
+                - user_id
+                - title
+                - text
+        '404':
+          description: User not found
+        '406':
+          description: unsupported accept header
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
