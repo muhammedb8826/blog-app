@@ -38,19 +38,19 @@ RSpec.describe 'Users show', type: :feature do
   end
 
   # When I click a user's post, it redirects me to that post's show page.
-    it 'should redirect to the post show page' do
-        visit "users/#{user_two.id}"
-        click_on post_one.title
-        expect(page).to have_content(post_one.title)
-    end
+  it 'should redirect to the post show page' do
+    visit "users/#{user_two.id}"
+    click_on post_one.title
+    expect(page).to have_content(post_one.title)
+  end
 
-   # When I click to see all posts, it redirects me to the user's post's index page.
-    it 'should redirect to the users post index page' do
-        visit "users/#{user_two.id}"
-        click_on 'See all posts'
-        expect(page).to have_content(post_one.title)
-    end
-  
+  # When I click to see all posts, it redirects me to the user's post's index page.
+  it 'should redirect to the users post index page' do
+    visit "users/#{user_two.id}"
+    click_on 'See all posts'
+    expect(page).to have_content(post_one.title)
+  end
+
   describe 'Checking links' do
     it 'should render the users name as a link to their profile' do
       visit "users/#{user_two.id}"

@@ -15,13 +15,13 @@ RSpec.describe 'post#index', type: :system do
   let!(:comment_four) { Comment.create author: user_two, post: post_two, text: 'hello' }
   let!(:comment_five) { Comment.create author: user_two, post: post_two, text: 'hello' }
   let!(:comment_six) { Comment.create author: user_two, post: post_two, text: 'hello' }
-  
+
   # I can see the user's profile picture.
   it 'should render the user profile picture' do
     visit "users/#{user_two.id}/posts"
     expect(page).to have_css("img[src*='http://myphoto']")
   end
-  
+
   # I can see the user's username.
   it 'should render the user name' do
     visit "users/#{user_two.id}/posts"
