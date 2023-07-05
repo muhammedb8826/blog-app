@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row grid gap-3">
     <div class="col-6 col-md-4 border border-3 border-black">
-      <img src="<%= @user.photo %>" />
+      <%= image_tag @user.photo %>
     </div>
     <div class="col-6 col-md-8 border border-3 border-black">
       <h2> <%=link_to @user.name, user_path(@user.id) %></h2>
