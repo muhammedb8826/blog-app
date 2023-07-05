@@ -36,5 +36,20 @@ RSpec.describe 'Users show', type: :feature do
     visit "users/#{user_two.id}"
     expect(page).to have_button('See all posts')
   end
-
+  describe 'Checking links' do
+    it 'should render the users name as a link to their profile' do
+      visit "users/#{user_two.id}"
+      expect(page).to have_link(user_two.name, href: "/users/#{user_two.id}")
+    end
+    it 'should render the users first 3 posts as links to their show page' do
+      visit "users/#{user_two.id}"
+      user_two.recent_posts.each do |post|
+        expect(page).to have_link(post.title, href: "/users/#{user_two.id}/posts/#{post.id}")
+      end
+    end
+    it 'should render a button that lets me view all of a users posts' do
+      visit "users/#{user_two.id}"
+      expect(page).to have_link('See all posts', href: "/users/#{user_two.id}/posts")
+    end
+  end
 end
