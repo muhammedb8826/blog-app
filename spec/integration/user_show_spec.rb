@@ -31,5 +31,10 @@ RSpec.describe 'Users show', type: :feature do
       expect(page).to have_content(post.title)
     end
   end
+  # I can see a button that lets me view all of a user's posts.
+  it 'should render a button that lets me view all of a users posts' do
+    visit "users/#{user_two.id}"
+    expect(page).to have_button('See all posts')
+  end
 
 end
