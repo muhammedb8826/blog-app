@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
-
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments.includes(:author).order(created_at: :desc)
