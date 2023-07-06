@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
   def new
     @like = Like.new
   end
