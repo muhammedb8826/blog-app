@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments.includes(:author).order(created_at: :desc)
@@ -9,7 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(author_id: currrent_user.id, post_id: params[:post_id], **comment_params)
+    @comment = Comment.new(author_id: current_user.id, post_id: params[:post_id], **comment_params)
 
     if @comment.save
       flash[:notice] = 'Your comment was added successfully'
