@@ -119,6 +119,11 @@ rails server
 - Twitter: [@twitterhandle](https://twitter.com/muhammedb8826)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammedb8826/)
 
+👤 **Juan Zorrilla**
+
+- GitHub: [@Swarzstein](https://github.com/Swarzstein)
+- LinkedIn: [Juan Zorrilla](https://www.linkedin.com/in/juan-a-zorrilla/)
+
 <p align="right"><a href="#readme-top">👆</a></p>
 
 <!-- FUTURE FEATURES -->
