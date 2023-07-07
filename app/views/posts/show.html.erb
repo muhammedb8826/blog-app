@@ -11,7 +11,15 @@
         <div class="d-flex">
             <h1><%= @post.title %></h1>
             <p><%= @post.text %></p>
-
+            <ul>
+              <% @post.recent_comments.each do |comment| %>
+              <li><%=comment.text%> 
+                <% if can? :destroy, comment %>
+                  <%= link_to "Delete Comment", user_post_comment_path(author_id:comment.author_id,post_id:comment.post_id,id:comment.id), 'data-turbo-method': :delete %>
+                <% end %>
+              </li>
+              <% end %>
+            </ul>
         </div>
         <div class="form">
          <%= link_to new_user_post_comment_path(@post.author_id, @post.id) do %>
