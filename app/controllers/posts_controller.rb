@@ -5,6 +5,16 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
+    respond_to do |format|
+      format.html do 
+        @pagination = @posts.size > 2
+        return unless  @pagination
+          @page = params[:page].to_i || 1
+          @totla_pages = (@posts.size + 1) / 2
+          @posts = @posts.limit(2).offset((@page - 1) * 2)
+        end
+      format.json { render json: @posts }
+    end
   end
 
   def destroy
