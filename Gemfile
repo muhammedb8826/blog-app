@@ -75,5 +75,5 @@ end
 
 gem 'cancancan'
 gem 'devise', '~> 4.9'
-gem 'rack-cors'
 gem 'devise-jwt'
+gem 'rack-cors'
