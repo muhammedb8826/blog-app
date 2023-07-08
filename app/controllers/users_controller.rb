@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def index
     @users = User.includes(:posts)
-    @users = User.all # assuming you have a User model
+    # @users = User.all # assuming you have a User model
   end
 
   def show
