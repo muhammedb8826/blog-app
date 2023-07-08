@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments.includes(:author).order(created_at: :desc)
+    respond_to do |format|
+      format.json { render json: @comments }
+    end
   end
 
   def new
